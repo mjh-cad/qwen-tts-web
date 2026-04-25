@@ -6,7 +6,7 @@ Current limitations:
 - Long text is split into multiple independent TTS calls, causing voice drift.
 - The frontend does not show generation progress or support long audiobook workflows.
 - The backend is synchronous, so generation blocks the server and the UI can appear unresponsive.
-- The app currently uses a model specified by `QWEN_TTS_MODEL` and defaults to `Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign`.
+- The app currently uses a model specified by `QWEN_TTS_MODEL` and should default to `Qwen/Qwen3-TTS-12Hz-1.7B-Base` for audiobook generation.
 
 Key requirements:
 
@@ -67,7 +67,7 @@ Implementation plan:
      - `QWEN_TTS_DEVICE=cuda:0`
      - `QWEN_TTS_DTYPE=float16`
      - `QWEN_TTS_FLASH_ATTENTION=true` when flash-attn is installed.
-   - Document that `Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign` and `Qwen/Qwen3-TTS-12Hz-1.7B-Base` are both supported, but VoiceDesign is more guided.
+   - Document that `Qwen/Qwen3-TTS-12Hz-1.7B-Base` should be the default for audiobook generation, while `Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign` remains available for guided voice styles.
    - Note that `flash-attn` and `sox` are optional performance/utility dependencies.
 
 Next refinement areas:
