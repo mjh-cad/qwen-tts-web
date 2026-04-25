@@ -1,0 +1,22 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+
+# Environment files
+.env
+.env.*
+
+# Generated outputs and uploads
+app/outputs/
+app/uploads/
+
+# Application cache
+app/services/__pycache__/
+
+# OS files
+.DS_Store
+Thumbs.db

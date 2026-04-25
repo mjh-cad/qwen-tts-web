@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qwen TTS Web</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+  <main class="page">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Qwen TTS</p>
+        <h1>Text to Speech Generator</h1>
+        <p class="subtitle">
+          Type text, upload one file, or upload multiple text files. Generated audio will be saved in the output
+          history.
+        </p>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Create Audio</h2>
+
+        <label for="textInput">Message</label>
+        <textarea id="textInput" placeholder="Type your text here..."></textarea>
+
+        <div class="row three">
+          <div>
+            <label for="languageInput">Language</label>
+            <input id="languageInput" value="English">
+          </div>
+
+          <div>
+            <label for="maxChunkInput">Chunk size</label>
+            <input id="maxChunkInput" type="number" min="300" max="4000" value="1200">
+          </div>
+
+          <div>
+            <label for="voiceInput">Voice description</label>
+            <input id="voiceInput" value="A warm, clear professional voice">
+          </div>
+        </div>
+
+        <label for="fileInput">Upload text files</label>
+        <input id="fileInput" type="file" accept=".txt,.md,.text" multiple>
+
+        <button id="generateBtn">Generate Audio</button>
+
+        <pre id="statusBox" class="status">Ready.</pre>
+      </div>
+
+      <div class="card">
+        <div class="historyHeader">
+          <h2>History</h2>
+          <button id="refreshBtn" class="secondary">Refresh</button>
+        </div>
+
+        <div id="historyList" class="historyList"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+
+</html>
