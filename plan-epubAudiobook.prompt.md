@@ -12,6 +12,7 @@ Key requirements:
 
 - Accept EPUB uploads from the web UI.
 - Extract readable text from EPUB chapters reliably.
+- Route EPUB uploads and text file uploads through the same chunking and generation pipeline so a small text file can be used for testing.
 - Use a single consistent voice prompt across all generated chunks.
 - Generate larger chunks where possible (up to the app’s 4000-character chunk limit).
 - Combine generated chunk audio into a single audiobook file or clearly grouped output.
@@ -44,6 +45,7 @@ Implementation plan:
 
 5. Add a dedicated EPUB generation flow.
    - Add a backend route for EPUB uploads, such as `/api/generate-epub`.
+   - Ensure EPUB uploads and plain text uploads share the same backend chunking and voice-generation pipeline so small text files can be used as end-to-end tests.
    - Reuse the existing chunk generator and TTS generation pipeline.
    - Return a single combined WAV file URL or a list of chapter audio files.
    - Optionally include EPUB metadata in the filename or response.
